@@ -1,0 +1,116 @@
+/* Reset default margin and padding */
+html,
+body {
+  margin: 0;
+  padding: 2rem;
+  box-sizing: border-box;
+  font-family: 'Times New Roman', Times, serif;
+
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login_form {
+  width: 44rem;
+  max-width: 90%;
+  padding: 4rem 2rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background-color);
+  margin: 0 auto;
+}
+
+.logIn_icon {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+.app_subheader,
+span {
+  font-size: 1.6rem;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode';
+}
+
+span {
+  font-weight: 600;
+}
+
+button {
+  width: 100%;
+  font-weight: 600;
+  border-radius: 1rem;
+  border: none;
+  padding: 2rem;
+  font-size: 1.6rem;
+  color: var(--button-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+button:hover {
+  transform: scaleX(1.03);
+}
+
+.inputWrapper,
+.passwordWrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+.email,
+.user {
+  width: 100%;
+  font-weight: 500;
+  padding: 1.6rem 1.6rem 1.6rem 3.6rem;
+  font-size: 1.6rem;
+  border-radius: 2rem;
+  margin-bottom: 1.6rem;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  position: relative;
+}
+
+.email:focus,
+.user:focus {
+  border: 3px solid var(--primary-color);
+  outline: none;
+}
+
+.envelope,
+.password {
+  position: absolute;
+  left: 1.2rem;
+  top: 40%;
+  transform: translateY(-50%);
+  width: 2.4rem;
+  height: 2.4rem;
+  z-index: 1;
+}
+
+@media (max-width:420px) {
+  .login_form {
+    width: 360px;
+  }
+}
+
+@media (max-width:360px) {
+  .login_form {
+    width: 300px;
+  }
+}
