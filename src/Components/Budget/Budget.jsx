@@ -2,8 +2,14 @@ import React from 'react';
 import styles from './Budget.module.css';
 function Budget() {
   return (
-    <div>
-       <h1 className={styles.header}>THis is budget track</h1>
+    <div className={styles.dashboard}>
+      <div className={styles.sideBar}>
+        <p>This is side bar</p>
+      </div>
+      <div className={styles.dashboard_container}>
+        <p>Welcome </p>
+        
+        <p>This is side contauner</p></div>
     </div>
    
   )

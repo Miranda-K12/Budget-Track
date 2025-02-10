@@ -3,6 +3,7 @@ import styles from './LogIn.module.css';
 import { useNavigate } from 'react-router-dom';
 import  React, {useState} from 'react';
 import GoogleIcon from '../../assets/images/google.svg';
+import User from '../../assets/images/user.svg';
 import Arrow from '../../assets/images/right-arrow.svg';
 import Envelope from '../../assets/images/envelope.svg';
 import Password from '../../assets/images/password.svg';
@@ -27,29 +28,49 @@ const LogInForm = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
+  const [name, setName] = useState('');
+  const [nameError, setNameError] = useState('');
   const navigate = useNavigate();
 
   // Form validation
   const validateForm = () => {
-    const validateEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-    const validatePassword = /^.{6,}$/;
-    let isValid = true;
+  const validateEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+  const validatePassword = /^.{6,}$/;
+  let isValid = true;
 
-    if (!validateEmail.test(email)) {
-      setEmailError('Please enter a valid email.');
-      isValid = false;
-    } else {
-      setEmailError('');
-    }
+  // Email validation
+  if (!validateEmail.test(email)) {
+    setEmailError('Please enter a valid email.');
+    isValid = false;
+  } else {
+    setEmailError('');
+  }
 
-    if (!validatePassword.test(password)) {
-      setPasswordError('Password must be at least 6 characters.');
-      isValid = false;
-    } else {
-      setPasswordError('');
-    }
-    return isValid;
-  };
+  // Password validation
+  if (!validatePassword.test(password)) {
+    setPasswordError('Password must be at least 6 characters.');
+    isValid = false;
+  } else {
+    setPasswordError('');
+  }
+
+  // Name validation
+  if (name.trim() === '') {
+    setNameError('Name is required.');
+    isValid = false;
+  } else if (name.length < 2) {
+    setNameError('Name must be at least 2 characters.');
+    isValid = false;
+  } else if (!/^[a-zA-Z\s]+$/.test(name)) {
+    setNameError('Name can only contain letters and spaces.');
+    isValid = false;
+  } else {
+    setNameError('');
+  }
+
+  return isValid;
+};
+
 
   // Handle normal form submission
   const handleSubmit = (e) => {
@@ -59,32 +80,40 @@ const LogInForm = () => {
       navigate('/Budget');
     }
   };
-
   // Handle Google login
   const handleGoogleLogin = () => {
     navigate('/Budget'); 
   };
-
   // Toggle password visibility
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
 
   return (
+    <div className={styles.container}>
     <div className={styles.login_form}>
-      <p className={styles.app_subheader}>Login to <span>Budget Track</span> </p>
-
+      <p className={styles.app_subheader}>Log in to <span>Budget Track</span> </p>
       <Button
         type="button" 
         backgroundColor='#000758'
         onClick={handleGoogleLogin}
       >
         <img src={GoogleIcon} className={styles.logIn_icon} alt='google'/>
-        Login with Google
+        Log in with Google
       </Button>
 
-      <form onSubmit={handleSubmit} className={styles.form}>
-        <div className={styles.inputWrapper}>
+        <form onSubmit={handleSubmit} className={styles.form}>
+          <div className={styles.inputWrapper}>
+            <img src={User} className={styles.username} alt="user-icon" />
+          <input type='text'
+            value={name}
+            className={styles.name}
+            onChange={(e)=>setName(e.target.value)}
+            placeholder='Enter your Name'
+            />
+             {nameError && <p className={styles.error}>{nameError}</p>}
+          </div>
+          <div className={styles.inputWrapper}>
           <img src={Envelope} className={styles.envelope} alt="envelope-icon" />
           <input
             type="email"
@@ -127,7 +156,9 @@ const LogInForm = () => {
       <p className={styles.password_paraghrap}>Forgot Password?</p>
       <p className={ styles.account}>Don’t have an account? <span className={styles.sign_up}>Sign up</span></p>
     </div>
-  );
+      );
+    </div>
+  )
 };
 
 

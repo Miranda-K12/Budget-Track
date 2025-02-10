@@ -21,7 +21,6 @@
   --text-color: #020202;
   --warning-color: #ee0000;
   --warning-hover-color: #e20707;
-  background-color: var(--primary-color);
 }
 
 body {

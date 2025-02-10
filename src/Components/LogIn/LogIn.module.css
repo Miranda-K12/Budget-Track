@@ -2,22 +2,21 @@
 html,
 body {
   margin: 0;
-  padding: 2rem;
+  padding: 0;
   box-sizing: border-box;
   font-family: 'Times New Roman', Times, serif;
-
 }
 
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.container {
+  background-color: var(--primary-color);
+  height: 100vh;
+  padding-top: 4rem;
 }
 
 .login_form {
   width: 44rem;
   max-width: 90%;
-  padding: 4rem 2rem;
+  padding: 2rem;
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
@@ -77,7 +76,8 @@ button:hover {
 }
 
 .email,
-.user {
+.user,
+.name {
   width: 100%;
   font-style: italic;
   padding: 1.6rem 1.6rem 1.6rem 3.6rem;
@@ -111,7 +111,8 @@ button:hover {
 }
 
 .envelope,
-.password {
+.password,
+.username {
   position: absolute;
   left: 1.2rem;
   top: 40%;
@@ -124,6 +125,7 @@ button:hover {
 .password_paraghrap {
   color: var(--link);
   font-size: 1.6rem;
+  margin-top: 1rem;
   font-weight: 600;
   text-transform: capitalize;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode';
