@@ -9,7 +9,7 @@ function Budget() {
       <div className={styles.dashboard_container}>
         <p>Welcome </p>
         
-        <p>This is side contauner</p></div>
+        <p>This is dashboard</p></div>
     </div>
    
   )
