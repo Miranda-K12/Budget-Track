@@ -1,19 +1,16 @@
-/* eslint-disable react-refresh/only-export-components */
 /* eslint-disable react/prop-types */
+/* eslint-disable react-refresh/only-export-components */
 import React, { createContext, useState } from 'react';
 
-// Create a Context
+// Create a context
 export const UserContext = createContext();
 
+// UserProvider to provide the context value
 export const UserProvider = ({ children }) => {
-  const [user, setUser] = useState({ name: '', email: '' });
-
-  const updateUser = (newUser) => {
-    setUser(newUser);
-  };
+  const [name, setName] = useState(""); 
 
   return (
-    <UserContext.Provider value={{ user, updateUser }}>
+    <UserContext.Provider value={{ name, setName }}>
       {children}
     </UserContext.Provider>
   );

@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import styles from './LogIn.module.css';
 import { useNavigate } from 'react-router-dom';
-import  React, {useState} from 'react';
+import  React, {useState, useContext} from 'react';
 import GoogleIcon from '../../assets/images/google.svg';
 import User from '../../assets/images/user.svg';
 import Arrow from '../../assets/images/right-arrow.svg';
@@ -9,7 +9,7 @@ import Envelope from '../../assets/images/envelope.svg';
 import Password from '../../assets/images/password.svg';
 import ClosedEye from '../../assets/images/eye-closed.svg';
 import OpenedEye from '../../assets/images/eye-open.svg';
-
+import { UserContext} from '../../UserContext';
 function Button({ children, backgroundColor, onClick, textColor }) {
   return (
     <button
@@ -29,7 +29,7 @@ const LogInForm = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
-  const [name, setName] = useState('');
+  const { name, setName } =  useContext(UserContext);
   const [nameError, setNameError] = useState('');
   const navigate = useNavigate();
 
