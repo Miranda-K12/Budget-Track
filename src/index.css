@@ -16,8 +16,6 @@
   --input: #808080;
   --button-color: #ffff;
   --link: #e67e22;
-  --link-hover: #b2621c;
-  --link-dark: #b2621c;
   --text-color: #020202;
   --warning-color: #ee0000;
   --warning-hover-color: #e20707;
@@ -31,4 +29,8 @@ body {
 * {
   font-size: 62.5%;
   box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
 }

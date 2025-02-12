@@ -1,13 +1,13 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import React from 'react';
 import LogInForm from './Components/LogIn/LogIn';  
-import Budget from './Components/Budget/Budget';
+import Dashboard from './Components/Dashboard/Dashboard';
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<LogInForm />} /> 
-        <Route path="/Budget" element={<Budget />} /> 
+        <Route path="/Dashboard" element={<Dashboard />} /> 
       </Routes>
     </Router>
   );

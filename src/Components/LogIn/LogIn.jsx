@@ -81,13 +81,8 @@ const LogInForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
-      navigate('/Budget');
+      navigate('/Dashboard');
     }
-  };
-
-  // Handle Google login
-  const handleGoogleLogin = () => {
-    navigate('/Budget');
   };
 
   // Toggle password visibility
@@ -98,16 +93,14 @@ const LogInForm = () => {
   return (
     <div className={styles.container}>
       <div className={styles.login_form}>
-        <p className={styles.app_subheader}>Log in to <span>Budget Track</span> </p>
+        <p className={styles.app_subheader}>Log in to <span className='app_name'>Budget Track</span> </p>
         <Button
           type="button"
           backgroundColor='#000758'
-          onClick={handleGoogleLogin}
         >
           <img src={GoogleIcon} className={styles.logIn_icon} alt='google' />
           Log in with Google
         </Button>
-
         <form onSubmit={handleSubmit} className={styles.form}>
           <div className={styles.inputWrapper}>
             <img src={User} className={styles.username} alt="user-icon" />

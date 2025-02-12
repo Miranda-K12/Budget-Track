@@ -1,14 +1,16 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react-refresh/only-export-components */
-import React, { createContext, useState } from 'react';
-
-// Create a context
+import React, { createContext, useState, useEffect } from 'react';
 export const UserContext = createContext();
 
-// UserProvider to provide the context value
 export const UserProvider = ({ children }) => {
-  const [name, setName] = useState(""); 
-
+  const storedName = localStorage.getItem('userName') || '';
+  const [name, setName] = useState(storedName); 
+useEffect(() => {
+    if (name) {
+      localStorage.setItem('userName', name); 
+    }
+  }, [name]);
   return (
     <UserContext.Provider value={{ name, setName }}>
       {children}

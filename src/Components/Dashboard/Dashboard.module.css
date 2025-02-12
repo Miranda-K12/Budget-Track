@@ -1,0 +1,124 @@
+.dashboard {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  height: 100vh;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode';
+}
+
+.sideBar {
+  background-color: var(--primary-color);
+  padding-top: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  padding-left: 2.4rem;
+  gap: 2.4rem;
+}
+
+.sidebar_header {
+  font-size: 2.8rem;
+  color: var(--background-color);
+}
+
+.dashboard_container {
+  background-color: var(--background-color);
+  padding: 4rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 4.8rem;
+  position: relative;
+}
+
+.header::after {
+  content: "";
+  display: block;
+  height: 2px;
+  background-color: var(--link);
+  width: 100%;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+}
+
+.user_container {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.user_container p {
+  font-weight: 500;
+}
+
+.user_container img {
+  width: 36px;
+  height: 36px;
+}
+
+.user_name {
+  color: var(--link);
+  font-size: inherit;
+}
+
+.summary {
+  font-size: 1.8rem;
+}
+
+.dashboard_box {
+  gap: 2.4rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  transition: all 0.1s ease-in;
+}
+
+.dashboard_box:hover {
+  transform: scale(1.02);
+}
+
+.dashboard_icon {
+  width: 36px;
+  height: 36px;
+}
+
+h3 {
+  color: var(--background-color);
+  font-size: 1.8rem;
+}
+
+.sign_out {
+  color: var(--button-color);
+  background-color: var(--primary-color);
+  width: 80%;
+  border: 1px solid var(--button-color);
+  padding: 1.2rem;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.sign_out:hover {
+  background-color: var(--hover-color);
+}
+
+.author {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  cursor: pointer;
+}
+
+a {
+  color: var(--link);
+  font-size: 1.2rem;
+}
+
+.github_icon {
+  width: 1.6rem;
+  height: 1.6rem;
+}
