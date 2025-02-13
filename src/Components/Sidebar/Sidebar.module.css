@@ -1,13 +1,6 @@
-.dashboard {
-  display: grid;
-  grid-template-columns: 20% 80%;
-  height: 100vh;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode';
-}
-
 .sideBar {
   background-color: var(--primary-color);
-  padding-top: 2.4rem;
+  padding: 2.4rem 0;
   display: flex;
   flex-direction: column;
   padding-left: 2.4rem;
@@ -17,56 +10,6 @@
 .sidebar_header {
   font-size: 2.8rem;
   color: var(--background-color);
-}
-
-.dashboard_container {
-  background-color: var(--background-color);
-  padding: 4rem;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 4.8rem;
-  position: relative;
-}
-
-.header::after {
-  content: "";
-  display: block;
-  height: 2px;
-  background-color: var(--link);
-  width: 100%;
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  margin: 0;
-}
-
-.user_container {
-  display: flex;
-  gap: 16px;
-  align-items: center;
-}
-
-.user_container p {
-  font-weight: 500;
-}
-
-.user_container img {
-  width: 36px;
-  height: 36px;
-}
-
-.user_name {
-  color: var(--link);
-  font-size: inherit;
-}
-
-.summary {
-  font-size: 1.8rem;
 }
 
 .dashboard_box {
@@ -108,8 +51,9 @@ h3 {
 
 .author {
   display: flex;
-  gap: 1rem;
   align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
   cursor: pointer;
 }
 

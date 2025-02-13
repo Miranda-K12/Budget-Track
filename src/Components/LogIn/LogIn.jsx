@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import styles from './LogIn.module.css';
 import { useNavigate } from 'react-router-dom';
-import  React, {useState, useContext} from 'react';
+import  React, {useState} from 'react';
 import GoogleIcon from '../../assets/images/google.svg';
 import User from '../../assets/images/user.svg';
 import Arrow from '../../assets/images/right-arrow.svg';
@@ -9,7 +9,6 @@ import Envelope from '../../assets/images/envelope.svg';
 import Password from '../../assets/images/password.svg';
 import ClosedEye from '../../assets/images/eye-closed.svg';
 import OpenedEye from '../../assets/images/eye-open.svg';
-import { UserContext} from '../../UserContext';
 function Button({ children, backgroundColor, onClick, textColor }) {
   return (
     <button
@@ -29,7 +28,7 @@ const LogInForm = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
-  const { name, setName } =  useContext(UserContext);
+  const [name, setName] = useState('');  // Local state for the name input
   const [nameError, setNameError] = useState('');
   const navigate = useNavigate();
 
@@ -64,12 +63,15 @@ const LogInForm = () => {
       setEmailError('');
     }
 
+    // Password validation
     if (!validatePassword.test(password)) {
       setPasswordError('Password must be at least 6 characters.');
       isValid = false;
     } else {
       setPasswordError('');
     }
+
+    // Name validation
     if (!validateName(name)) {
       isValid = false;
     }
@@ -78,12 +80,12 @@ const LogInForm = () => {
   };
 
   // Handle normal form submission
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (validateForm()) {
-      navigate('/Dashboard');
-    }
-  };
+ const handleSubmit = (e) => {
+  e.preventDefault();
+  if (validateForm()) {
+    navigate('/dashboard');  // This should be the correct route
+  }
+}
 
   // Toggle password visibility
   const togglePasswordVisibility = () => {
@@ -94,13 +96,14 @@ const LogInForm = () => {
     <div className={styles.container}>
       <div className={styles.login_form}>
         <p className={styles.app_subheader}>Log in to <span className='app_name'>Budget Track</span> </p>
-        <Button
-          type="button"
-          backgroundColor='#000758'
-        >
+        
+        {/* Google Login Button */}
+        <Button type="button" backgroundColor='#000758'>
           <img src={GoogleIcon} className={styles.logIn_icon} alt='google' />
           Log in with Google
         </Button>
+
+        {/* Main Login Form */}
         <form onSubmit={handleSubmit} className={styles.form}>
           <div className={styles.inputWrapper}>
             <img src={User} className={styles.username} alt="user-icon" />
@@ -113,6 +116,7 @@ const LogInForm = () => {
             />
             {nameError && <p className={styles.error}>{nameError}</p>}
           </div>
+
           <div className={styles.inputWrapper}>
             <img src={Envelope} className={styles.envelope} alt="envelope-icon" />
             <input
@@ -145,14 +149,14 @@ const LogInForm = () => {
             {passwordError && <p className={styles.error}>{passwordError}</p>}
           </div>
 
-          <Button
-            type="submit"
-            backgroundColor='#12f3e0'
-            textColor='#000758'
-          >
-            <img src={Arrow} className={styles.logIn_icon} alt='right-arrow' />Log In
+          {/* Submit Button */}
+          <Button type="submit" backgroundColor='#12f3e0' textColor='#000758'>
+            <img src={Arrow} className={styles.logIn_icon} alt='right-arrow' />
+            Log In
           </Button>
         </form>
+
+        {/* Additional Links */}
         <p className={styles.password_paraghrap}>Forgot Password?</p>
         <p className={styles.account}>Don’t have an account? <span className={styles.sign_up}>Sign up</span></p>
       </div>
@@ -161,3 +165,5 @@ const LogInForm = () => {
 };
 
 export default LogInForm;
+
+
