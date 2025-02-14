@@ -30,8 +30,8 @@ const LogInForm = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
-  const [inputName, setInputName] = useState('');
-  const { setName } = useUser();
+  const [inputName, setInputName] = useState(''); 
+  const { setName } = useUser(); 
   const [nameError, setNameError] = useState('');
   const navigate = useNavigate();
 
@@ -52,7 +52,7 @@ const LogInForm = () => {
     return true;
   };
 
-  // Form validation 
+  // Form validation
   const validateForm = () => {
     const validateEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     const validatePassword = /^.{6,}$/;
@@ -77,12 +77,13 @@ const LogInForm = () => {
   };
 
   // Handle normal form submission
- const handleSubmit = (e) => {
-  e.preventDefault();
-  if (validateForm()) {
-    navigate('/dashboard');  
-  }
-}
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (validateForm()) {
+      setName(inputName); // Set the global name when form is valid
+      navigate('/dashboard');  
+    }
+  };
 
   // Toggle password visibility
   const togglePasswordVisibility = () => {
@@ -106,9 +107,9 @@ const LogInForm = () => {
             <img src={User} className={styles.username} alt="user-icon" />
             <input
               type='text'
-              value={name}
+              value={inputName} // use inputName to control the input value
               className={styles.name}
-              onChange={(e) => setInputName(e.target.value)}
+              onChange={(e) => setInputName(e.target.value)} // update inputName
               placeholder='Enter your Name'
             />
             {nameError && <p className={styles.error}>{nameError}</p>}
@@ -160,6 +161,7 @@ const LogInForm = () => {
     </div>
   );
 };
+
 
 export default LogInForm;
 

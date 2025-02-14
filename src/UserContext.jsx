@@ -3,10 +3,8 @@
 
 import React, { createContext, useState, useContext, useEffect } from 'react';
 
-// Create a Context to manage user data
 export const UserContext = createContext();
 
-// Custom hook to use the UserContext
 export const useUser = () => {
   return useContext(UserContext); 
 };

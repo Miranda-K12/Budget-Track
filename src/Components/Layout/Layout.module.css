@@ -2,8 +2,6 @@
 .layout {
   display: grid;
   grid-template-columns: 20% 80%;
-
-  /* Full height of the screen */
 }
 
 .mainContent {
@@ -21,7 +19,7 @@
 
 .header {
   width: 100%;
-  background-color: #f8f8f8;
+  background-color: var(--background-color);
   padding: 20px;
   position: sticky;
   top: 0;

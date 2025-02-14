@@ -1,19 +1,17 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';  // Dynamic page rendering
-import Sidebar from '../Sidebar/Sidebar';  // Sidebar component
-import Header from '../Header/Header';  // Header component (same across all pages)
+import { Outlet } from 'react-router-dom';  
+import Sidebar from '../Sidebar/Sidebar'; 
+import Header from '../Header/Header'; 
 import styles from './Layout.module.css';
 
 const Layout = () => {
   return (
     <div className={styles.layout}>
-      <Sidebar />  {/* Sidebar stays on the left */}
-      
+      <Sidebar /> 
       <div className={styles.mainContent}>
-        <Header />  {/* Header stays the same for all pages */}
-        
+        <Header />      
         <div className={styles.pageContent}>
-          <Outlet />  {/* Dynamic content depending on route (Dashboard, Incomes, etc.) */}
+          <Outlet /> 
         </div>
       </div>
     </div>
