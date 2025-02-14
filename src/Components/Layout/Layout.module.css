@@ -1,5 +1,33 @@
+/* Layout.module.css */
 .layout {
-  background-color: var(--background-color);
   display: grid;
   grid-template-columns: 20% 80%;
+
+  /* Full height of the screen */
+}
+
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.header {
+  width: 100%;
+  background-color: #f8f8f8;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.pageContent {
+  padding: 2.4rem;
 }

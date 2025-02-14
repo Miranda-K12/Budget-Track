@@ -9,6 +9,8 @@ import Envelope from '../../assets/images/envelope.svg';
 import Password from '../../assets/images/password.svg';
 import ClosedEye from '../../assets/images/eye-closed.svg';
 import OpenedEye from '../../assets/images/eye-open.svg';
+import { useUser } from '../../UserContext';
+
 function Button({ children, backgroundColor, onClick, textColor }) {
   return (
     <button
@@ -28,7 +30,8 @@ const LogInForm = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
-  const [name, setName] = useState('');  // Local state for the name input
+  const [inputName, setInputName] = useState('');
+  const { setName } = useUser();
   const [nameError, setNameError] = useState('');
   const navigate = useNavigate();
 
@@ -54,25 +57,19 @@ const LogInForm = () => {
     const validateEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     const validatePassword = /^.{6,}$/;
     let isValid = true;
-
-    // Email validation
     if (!validateEmail.test(email)) {
       setEmailError('Please enter a valid email.');
       isValid = false;
     } else {
       setEmailError('');
     }
-
-    // Password validation
     if (!validatePassword.test(password)) {
       setPasswordError('Password must be at least 6 characters.');
       isValid = false;
     } else {
       setPasswordError('');
     }
-
-    // Name validation
-    if (!validateName(name)) {
+    if (!validateName(inputName)) {
       isValid = false;
     }
 
@@ -83,7 +80,7 @@ const LogInForm = () => {
  const handleSubmit = (e) => {
   e.preventDefault();
   if (validateForm()) {
-    navigate('/dashboard');  // This should be the correct route
+    navigate('/dashboard');  
   }
 }
 
@@ -111,7 +108,7 @@ const LogInForm = () => {
               type='text'
               value={name}
               className={styles.name}
-              onChange={(e) => setName(e.target.value)}
+              onChange={(e) => setInputName(e.target.value)}
               placeholder='Enter your Name'
             />
             {nameError && <p className={styles.error}>{nameError}</p>}
