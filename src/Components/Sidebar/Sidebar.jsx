@@ -30,7 +30,6 @@ const Sidebar = () => {
       </div>
 
       <button className={styles.sign_out}>Sign out</button>
-
       <div className={styles.author}>
         <img src={Github} alt="github_icon" className={styles.github_icon} />
         <a href="https://www.linkedin.com/in/miranda-kachlavashvili-8a43aaa4/" target="_blank">

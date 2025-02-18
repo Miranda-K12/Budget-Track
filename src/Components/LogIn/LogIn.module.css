@@ -43,7 +43,7 @@ body {
 
 span {
   font-size: 1.6rem;
-  color: var(--link);
+  color: var(--orange-color);
   font-weight: 600;
 }
 
@@ -124,7 +124,7 @@ button:hover {
 }
 
 .password_paraghrap {
-  color: var(--link);
+  color: var(--orange-color);
   font-size: 1.6rem;
   margin-top: 1rem;
   font-weight: 600;

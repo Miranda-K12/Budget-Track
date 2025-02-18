@@ -1,12 +1,11 @@
 
 import styles from './Header.module.css';
 import User from '../../assets/images/new-user.svg';
-import { useUser } from '../../UserContext';  
+import { useUser } from '../../Context/UserContext';  
 import React from 'react';
 // Header.js
 
-import { useLocation } from 'react-router-dom';  // Import useLocation hook
-
+import { useLocation } from 'react-router-dom';  
 const Header = () => {
   const { name } = useUser(); 
   const location = useLocation();  

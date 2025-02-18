@@ -15,20 +15,18 @@
   --input: #808080;
   --border-color: #dfdfdf;
   --button-color: #ffff;
-  --link: #e67e22;
+  --orange-color: #e67e22;
   --text-color: #020202;
-  --warning-color: #ee0000;
-  --warning-hover-color: #e20707;
-}
-
-body {
-  margin: 0;
-  padding: 0;
+  --delete-color: #c96464;
+  --delete-hover-color: #e20707;
 }
 
 * {
   font-size: 62.5%;
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 a {

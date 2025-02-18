@@ -9,7 +9,7 @@ import Envelope from '../../assets/images/envelope.svg';
 import Password from '../../assets/images/password.svg';
 import ClosedEye from '../../assets/images/eye-closed.svg';
 import OpenedEye from '../../assets/images/eye-open.svg';
-import { useUser } from '../../UserContext';
+import { useUser } from '../../Context/UserContext';
 
 function Button({ children, backgroundColor, onClick, textColor }) {
   return (
