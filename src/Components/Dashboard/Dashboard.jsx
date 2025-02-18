@@ -5,10 +5,13 @@ import cardData from "./data";
 import Arrow from '../../assets/images/orange-arrow.svg';
 
 
+
 function Dashboard() {
   return (
     <div>
       <h3 className={styles.card_header}>Money Management Insights</h3>
+      <div className={styles.total_amount}>
+      </div>
       <div className={styles.card_container}>
         {cardData.map((card) => (
           <div key={card.id} className={styles.card_item}>

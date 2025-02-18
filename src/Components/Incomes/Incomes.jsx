@@ -6,9 +6,9 @@ function Incomes() {
   const [title, setTitle] = useState("");
   const [amount, setAmount] = useState("");
   const [date, setDate] = useState("");
-  const [category, setCategory] = useState("salary");
+  const [category, setCategory] = useState("");
 
-  const { incomes, addIncome, removeIncome } = useContext(IncomesContext);
+  const { incomes, addIncome, removeIncome, totalIncomes } = useContext(IncomesContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -22,7 +22,7 @@ function Incomes() {
     setTitle('');
     setAmount('');
     setDate('');
-    setCategory('salary');
+    setCategory('');
   };
 
   const removeIncomeHandler = (incomeToRemove) => {
@@ -33,12 +33,13 @@ function Incomes() {
     <div>
       <div className={styles.income_header}>
         <h1>Incomes</h1>
-        <p>Easily Monitor Your Income Streams</p>
+        <p>Easily Monitor Your Incomes Streams</p>
       </div>
-      <div className={styles.incomes_box}>
-        <h2>Total Incomes</h2>
-        <p>{incomes.reduce((acc, income) => acc + parseFloat(income.amount), 0)} EUR</p>
-      </div>
+   <div className={styles.incomes_box}>
+  <h2>Total Incomes</h2>
+  <p>{totalIncomes === 0 ? '0 EUR' : `${totalIncomes} EUR`}</p>
+</div>
+
       <form className={styles.incomes_container} onSubmit={handleSubmit}>
         <div className={styles.formFields}>
           <div>
@@ -76,6 +77,7 @@ function Incomes() {
           <div>
             <label htmlFor="category">Choose a category:</label>
             <select id="category" value={category} onChange={(e) => setCategory(e.target.value)} required>
+              <option value="" disabled selected>Select a category</option>
               <option value="salary">Salary</option>
               <option value="freelance">Freelance</option>
               <option value="investment">Investment</option>
@@ -94,7 +96,7 @@ function Incomes() {
               <li key={index} className={styles.income_item}>
                 <p className={styles.incomes_title}>{income.title}<span> - (Amount: {income.amount} EUR, 
                 Date: {income.date}, Category: {income.category})</span></p>
-                <button className={styles.delete_btn} onClick={() => removeIncomeHandler(income)}>Delete Incomes</button>
+                <button className={styles.delete_btn} onClick={() => removeIncomeHandler(income)}>Delete Income</button>
               </li>
             ))}
           </ul>

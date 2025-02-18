@@ -1,3 +1,11 @@
+.total_amount {
+  background-color: var(--primary-color);
+  font-size: 4.8rem;
+  color: var(--button-color);
+}
+
+
+
 .card_container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

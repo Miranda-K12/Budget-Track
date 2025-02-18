@@ -9,31 +9,25 @@ export const useIncomes = () => {
 };
 
 export const IncomesProvider = ({ children }) => {
-  // Retrieve incomes from localStorage, and ensure it is parsed correctly
   const savedIncomes = JSON.parse(localStorage.getItem('incomes')) || [];
-
-  // Initialize the incomes state with savedIncomes (default empty array if none exists)
   const [incomes, setIncomes] = useState(savedIncomes);
 
   useEffect(() => {
-    // Whenever incomes change, update localStorage
     if (incomes.length > 0) {
       localStorage.setItem('incomes', JSON.stringify(incomes));
     }
   }, [incomes]);
 
-  // Function to add new income
   const addIncome = (newIncome) => {
     setIncomes((prevIncomes) => [...prevIncomes, newIncome]);
   };
 
-
   const removeIncome = (incomeToRemove) => {
     setIncomes((prevIncomes) => prevIncomes.filter((income) => income !== incomeToRemove));
   };
-
+  const totalIncomes = incomes.reduce((acc, income) => acc + parseFloat(income.amount), 0);
   return (
-    <IncomesContext.Provider value={{ incomes, addIncome, removeIncome }}>
+    <IncomesContext.Provider value={{ incomes, addIncome, removeIncome, totalIncomes }}>
       {children}
     </IncomesContext.Provider>
   );

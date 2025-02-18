@@ -6,12 +6,15 @@ import './index.css';
 import App from './App.jsx'; 
 import { UserProvider } from './Context/UserContext.jsx';
 import { IncomesProvider } from './Context/IncomesContext.jsx';
+import { ExpensesProvider } from './Context/ExpensesContext';
 const root = createRoot(document.getElementById('root'));  
 root.render(
   <StrictMode>
     <UserProvider>
       <IncomesProvider>
-        <App />
+        <ExpensesProvider>
+          <App />
+          </ExpensesProvider>
         </IncomesProvider>
     </UserProvider>
     
