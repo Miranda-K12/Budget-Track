@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, {useState, useContext} from "react";
 import styles from './Incomes.module.css';
 import { IncomesContext } from "../../Context/IncomesContext";

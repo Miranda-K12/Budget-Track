@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 
 import styles from './Header.module.css';
 import User from '../../assets/images/new-user.svg';

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React,{useContext} from "react";
 import styles from './Dashboard.module.css';
 import cardData from "./data";
