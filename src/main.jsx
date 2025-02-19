@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // main.jsx
 import React from 'react';
 import { StrictMode } from 'react';
