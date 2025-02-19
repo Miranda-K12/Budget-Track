@@ -1,10 +1,54 @@
-.total_amount {
+.balance_container {
   background-color: var(--primary-color);
   font-size: 4.8rem;
   color: var(--button-color);
+  padding: 2.4rem;
+  width: 100%;
+  border-radius: 1rem;
 }
 
+.balance_container h1 {
+  color: var(--secondary-color);
+}
 
+.balance_container p {
+  font-size: 5.2rem;
+  font-weight: 600;
+}
+
+.detail_info {
+  margin: 2.4rem 0;
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+  gap: 10%;
+}
+
+.incomes_container,
+.expenses_container {
+  border-radius: 1rem;
+  padding: 2.4rem;
+  font-weight: 600;
+  border-radius: 1rem;
+}
+
+.incomes_container p,
+.expenses_container p {
+  font-size: 4.8rem;
+  color: var(--button-color)
+}
+
+.incomes_container {
+  background-color: var(--color-grin);
+}
+
+.expenses_container {
+  background-color: var(--red-color);
+}
+
+.subheader {
+  font-size: 3.6rem;
+}
 
 .card_container {
   display: grid;

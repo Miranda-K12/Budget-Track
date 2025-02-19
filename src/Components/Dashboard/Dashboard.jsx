@@ -1,10 +1,32 @@
-import React from "react";
+import React,{useContext} from "react";
 import styles from './Dashboard.module.css';
 import cardData from "./data";
 import Arrow from '../../assets/images/orange-arrow.svg';
+import { IncomesContext } from "../../Context/IncomesContext";
+import { ExpensesContext } from '../../Context/ExpensesContext';
+import Incomes from "../Incomes/Incomes";
+
 function Dashboard() {
+  const { totalIncomes } = useContext(IncomesContext);
+  const { totalExpenses } = useContext(ExpensesContext);
+   const currentBalance = totalIncomes - totalExpenses;
   return (
     <div>
+      <div className={styles.balance_container}>
+        <h1>Balance</h1>
+        <p>{currentBalance} Euros</p>
+      </div>
+      <div className={styles.detail_info}>
+      <div className={styles.incomes_container}>
+       <h2 className={styles.subheader}>Incomes</h2>
+        <p>{totalIncomes} Euros</p>
+      </div>
+      
+      <div className={styles.expenses_container}>
+        <h2 className={styles.subheader}>Expenses</h2>
+        <p>{totalExpenses} Euros</p>
+      </div>
+      </div>
       <h3 className={styles.card_header}>Money Management Insights</h3>
       <div className={styles.total_amount}>
       </div>

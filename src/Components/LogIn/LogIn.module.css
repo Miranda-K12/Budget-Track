@@ -106,7 +106,7 @@ button:hover {
 }
 
 .error {
-  color: var(--delete-hover-color);
+  color: var(--red-color);
   font-size: 1.6rem;
   font-style: italic;
 }
