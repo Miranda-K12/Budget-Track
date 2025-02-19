@@ -11,7 +11,7 @@
 
 .expenses_box {
   background-color: var(--primary-color);
-  width: 40%;
+  width: 100%;
   border-radius: 1rem;
   margin: 2.4rem 0;
   padding: 2rem;
