@@ -17,7 +17,7 @@ const Sidebar = () => {
 
   return (
     <div className={styles.sideBar}>
-      <h2 className={styles.sidebar_header}>Budget Track</h2>
+      <h2 className={styles.sidebar_header}>Budget Tracker</h2>
       <div className={styles.navigate_box}>
       <div className={styles.dashboard_box}>
         <Link to="/dashboard">

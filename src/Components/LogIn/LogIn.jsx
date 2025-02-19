@@ -81,11 +81,10 @@ const LogInForm = () => {
     return isValid;
   };
 
-  // Handle normal form submission
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
-      setName(inputName); // Set the global name when form is valid
+      setName(inputName); 
       navigate('/dashboard');
     }
   };
@@ -99,7 +98,7 @@ const LogInForm = () => {
     <div className={styles.container}>
       <div className={styles.login_form}>
         <p className={styles.app_subheader}>
-          Log in to <span className='app_name'>Budget Track</span>
+          Log in to <span className='app_name'>Budget Tracker</span>
         </p>
 
         {/* Google Login Button */}
@@ -114,9 +113,9 @@ const LogInForm = () => {
             <img src={User} className={styles.username} alt="user-icon" />
             <input
               type='text'
-              value={inputName} // use inputName to control the input value
+              value={inputName} 
               className={styles.name}
-              onChange={(e) => setInputName(e.target.value)} // update inputName
+              onChange={(e) => setInputName(e.target.value)}
               placeholder='Enter your Name'
             />
             {nameError && <p className={styles.error}>{nameError}</p>}
