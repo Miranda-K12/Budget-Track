@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import styles from './LogIn.module.css';
 import { useNavigate } from 'react-router-dom';
