@@ -18,8 +18,6 @@ const Sidebar = () => {
   return (
     <div className={styles.sideBar}>
       <h2 className={styles.sidebar_header}>Budget Track</h2>
-      
-      {/* Navigation links */}
       <div className={styles.dashboard_box}>
         <Link to="/dashboard">
           <img src={DashboardIcon} alt="dashboard_icon" className={styles.dashboard_icon} />
@@ -38,11 +36,7 @@ const Sidebar = () => {
           <h3>Expenses</h3>
         </Link>
       </div>
-
-      {/* Sign out button */}
       <button className={styles.sign_out} onClick={handleSignOut}>Sign out</button>
-
-      {/* Footer with author link */}
       <div className={styles.author}>
         <img src={Github} alt="github_icon" className={styles.github_icon} />
         <a href="https://www.linkedin.com/in/miranda-kachlavashvili-8a43aaa4/" target="_blank" rel="noopener noreferrer">

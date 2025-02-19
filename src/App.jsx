@@ -1,5 +1,5 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import LogInForm from './Components/LogIn/LogIn';  
 import Layout from './Components/Layout/Layout';  
 import Dashboard from './Components/Dashboard/Dashboard';  
@@ -10,7 +10,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/login" element={<LogInForm />} />
+        <Route path="/" element={<Navigate to="/login" />} /> 
+        <Route path="/login" element={<LogInForm />} /> 
         <Route element={<Layout />}>
           <Route path="dashboard" element={<Dashboard />} />  
           <Route path="incomes" element={<Incomes />} />  
@@ -22,5 +23,7 @@ function App() {
 }
 
 export default App;
+
+
 
 
