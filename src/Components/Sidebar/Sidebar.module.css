@@ -12,6 +12,13 @@
   bottom: 0;
 }
 
+.navigate_box {
+  display: flex;
+  flex-direction: column;
+  gap: 3.6rem;
+  justify-content: space-between;
+}
+
 .sidebar_header {
   font-size: 2.8rem;
   color: var(--background-color);
@@ -70,4 +77,30 @@ a {
 .github_icon {
   width: 1.6rem;
   height: 1.6rem;
+}
+
+@media (max-width:768px) {
+  .sideBar {
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    padding-left: 2.4rem;
+    gap: 1.2rem;
+    justify-content: space-around;
+    height: auto;
+    position: sticky;
+    top: 0;
+  }
+
+  .navigate_box {
+    display: flex;
+    flex-direction: row;
+    padding: 1.2rem;
+    justify-content: space-around;
+  }
+
+  .sign_out {
+    width: 90%;
+    margin: 0 auto;
+  }
 }

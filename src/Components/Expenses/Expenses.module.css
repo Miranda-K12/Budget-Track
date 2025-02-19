@@ -29,7 +29,7 @@ h2 {
 
 .expenses_container {
   box-shadow: rgba(99, 99, 99, 0.2) 4px 2px 8px 4px;
-  width: 60%;
+  width: 100%;
   padding: 2.4rem;
   border-radius: 1rem;
 }
@@ -83,7 +83,7 @@ select option {
 }
 
 .expense_list {
-  width: 80%;
+  width: 100%;
   border: 1px solid var(--primary-color);
   border-radius: 0.5rem;
   padding: 1.2rem;
@@ -126,4 +126,27 @@ li {
   border: none;
   cursor: pointer;
   border-radius: 5px;
+}
+
+@media (max-width:600px) {
+  .formFields {
+    grid-template-columns: 1fr;
+  }
+
+  .export_btn {
+    width: 100%;
+  }
+
+  .delete_btn {
+    width: 30%;
+  }
+
+  .add_btn {
+    width: 100%;
+    margin-top: 12.8rem;
+  }
+
+  .expenses_box {
+    width: 100%;
+  }
 }

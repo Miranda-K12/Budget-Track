@@ -18,6 +18,7 @@ const Sidebar = () => {
   return (
     <div className={styles.sideBar}>
       <h2 className={styles.sidebar_header}>Budget Track</h2>
+      <div className={styles.navigate_box}>
       <div className={styles.dashboard_box}>
         <Link to="/dashboard">
           <img src={DashboardIcon} alt="dashboard_icon" className={styles.dashboard_icon} />
@@ -35,7 +36,8 @@ const Sidebar = () => {
           <img src={Expense} alt="expense_icon" className={styles.dashboard_icon} />
           <h3>Expenses</h3>
         </Link>
-      </div>
+        </div>
+        </div>
       <button className={styles.sign_out} onClick={handleSignOut}>Sign out</button>
       <div className={styles.author}>
         <img src={Github} alt="github_icon" className={styles.github_icon} />
