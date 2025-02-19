@@ -1,11 +1,7 @@
-
 import React from "react";
 import styles from './Dashboard.module.css';
 import cardData from "./data";
 import Arrow from '../../assets/images/orange-arrow.svg';
-
-
-
 function Dashboard() {
   return (
     <div>

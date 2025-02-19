@@ -24,13 +24,15 @@ function Button({ children, backgroundColor, onClick, textColor }) {
     </button>
   );
 };
+
+
 const LogInForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
-  const [inputName, setInputName] = useState(''); 
+  const [inputName, setInputName] = useState('');
   const { setName } = useUser(); 
   const [nameError, setNameError] = useState('');
   const navigate = useNavigate();
@@ -54,21 +56,24 @@ const LogInForm = () => {
 
   // Form validation
   const validateForm = () => {
-    const validateEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    const validateEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zAZ0-9]{2,4}$/;
     const validatePassword = /^.{6,}$/;
     let isValid = true;
+
     if (!validateEmail.test(email)) {
       setEmailError('Please enter a valid email.');
       isValid = false;
     } else {
       setEmailError('');
     }
+
     if (!validatePassword.test(password)) {
       setPasswordError('Password must be at least 6 characters.');
       isValid = false;
     } else {
       setPasswordError('');
     }
+
     if (!validateName(inputName)) {
       isValid = false;
     }
@@ -81,7 +86,7 @@ const LogInForm = () => {
     e.preventDefault();
     if (validateForm()) {
       setName(inputName); // Set the global name when form is valid
-      navigate('/dashboard');  
+      navigate('/dashboard');
     }
   };
 
@@ -93,8 +98,10 @@ const LogInForm = () => {
   return (
     <div className={styles.container}>
       <div className={styles.login_form}>
-        <p className={styles.app_subheader}>Log in to <span className='app_name'>Budget Track</span> </p>
-        
+        <p className={styles.app_subheader}>
+          Log in to <span className='app_name'>Budget Track</span>
+        </p>
+
         {/* Google Login Button */}
         <Button type="button" backgroundColor='#000758'>
           <img src={GoogleIcon} className={styles.logIn_icon} alt='google' />
@@ -162,7 +169,10 @@ const LogInForm = () => {
   );
 };
 
-
 export default LogInForm;
+
+
+
+
 
 

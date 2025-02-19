@@ -76,7 +76,7 @@ function Expenses() {
           <div>
             <label htmlFor="category">Choose a category:</label>
             <select id="category" value={category} onChange={(e) => setCategory(e.target.value)} required>
-              <option value="" disabled selected>Select a category</option>
+              <option value="" defaultValue>Select a category</option>
               <option value="utility">Utility</option>
               <option value="rent">Rent</option>
               <option value="gloceries">Gloceries</option>

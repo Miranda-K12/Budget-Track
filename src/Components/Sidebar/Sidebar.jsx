@@ -1,15 +1,25 @@
 import React from 'react';
-import { Link } from 'react-router-dom';  // Use Link for navigation
-import DashboardIcon from '../../assets/images/dashboard.svg';  
-import Income from '../../assets/images/income.svg'
-import Expense from '../../assets/images/expenses.svg';  
-import Github from '../../assets/images/github.svg';  
-import styles from './Sidebar.module.css';  
+import { Link, useNavigate } from 'react-router-dom'; 
+//import { useUser } from '../../Context/UserContext';  
+
+import styles from './Sidebar.module.css';
+import DashboardIcon from '../../assets/images/dashboard.svg';
+import Income from '../../assets/images/income.svg';
+import Expense from '../../assets/images/expenses.svg';
+import Github from '../../assets/images/github.svg';
 
 const Sidebar = () => {
+  const navigate = useNavigate(); 
+
+  const handleSignOut = () => {
+    navigate('/login');  
+  };
+
   return (
     <div className={styles.sideBar}>
       <h2 className={styles.sidebar_header}>Budget Track</h2>
+      
+      {/* Navigation links */}
       <div className={styles.dashboard_box}>
         <Link to="/dashboard">
           <img src={DashboardIcon} alt="dashboard_icon" className={styles.dashboard_icon} />
@@ -29,15 +39,18 @@ const Sidebar = () => {
         </Link>
       </div>
 
-      <button className={styles.sign_out}>Sign out</button>
+      {/* Sign out button */}
+      <button className={styles.sign_out} onClick={handleSignOut}>Sign out</button>
+
+      {/* Footer with author link */}
       <div className={styles.author}>
         <img src={Github} alt="github_icon" className={styles.github_icon} />
-        <a href="https://www.linkedin.com/in/miranda-kachlavashvili-8a43aaa4/" target="_blank">
+        <a href="https://www.linkedin.com/in/miranda-kachlavashvili-8a43aaa4/" target="_blank" rel="noopener noreferrer">
           Created by Miranda
         </a>
       </div>
     </div>
   );
-}
+};
 
 export default Sidebar;
