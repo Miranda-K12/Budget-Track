@@ -26,7 +26,9 @@
 
         "react-dom": "^18.0.0",
 
-        "react-router-dom": "^7.1.5"
+        "react-router-dom": "^7.1.5",
+
+        "xlsx": "^0.18.5"
 
     },
 

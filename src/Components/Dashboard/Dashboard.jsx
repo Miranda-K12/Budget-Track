@@ -4,7 +4,7 @@ import cardData from "./data";
 import Arrow from '../../assets/images/orange-arrow.svg';
 import { IncomesContext } from "../../Context/IncomesContext";
 import { ExpensesContext } from '../../Context/ExpensesContext';
-import Incomes from "../Incomes/Incomes";
+
 
 function Dashboard() {
   const { totalIncomes } = useContext(IncomesContext);
@@ -46,6 +46,6 @@ function Dashboard() {
       </div>
     </div>
   );
-}<img src={Arrow} alt='right-arrow' className={styles.arrow_icon} />
+} 
 
 export default Dashboard;

@@ -1,8 +1,25 @@
 import React, {useState, useContext} from "react";
 import styles from './Incomes.module.css';
 import { IncomesContext } from "../../Context/IncomesContext";
+import * as XLSX from 'xlsx';
 
 function Incomes() {
+  const exportToExcel = () => {
+
+  const formattedIncomes = incomes.map((income) => ({
+    Title: income.title,
+    Amount: income.amount,
+    Date: income.date,
+    Category: income.category,
+  }));
+
+  // Create a worksheet and workbook
+  const ws = XLSX.utils.json_to_sheet(formattedIncomes);
+  const wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, "Incomes");
+  XLSX.writeFile(wb, "Incomes.xlsx");
+};
+
   const [title, setTitle] = useState("");
   const [amount, setAmount] = useState("");
   const [date, setDate] = useState("");
@@ -102,6 +119,7 @@ function Incomes() {
           </ul>
         )}
       </div>
+      <button onClick={exportToExcel} className={styles.export_btn}>Export to Excel</button>
     </div>
   );
 }
