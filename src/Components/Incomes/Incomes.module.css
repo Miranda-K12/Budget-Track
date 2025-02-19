@@ -152,4 +152,9 @@ select option {
   .delete_btn {
     width: 100%;
   }
+
+  .formFields input,
+  select {
+    width: 100%;
+  }
 }

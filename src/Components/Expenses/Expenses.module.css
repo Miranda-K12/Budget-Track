@@ -155,4 +155,9 @@ select option {
   .expenses_box {
     width: 100%;
   }
+
+  .formFields input,
+  select {
+    width: 100%;
+  }
 }
