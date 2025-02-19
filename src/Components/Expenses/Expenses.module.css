@@ -96,12 +96,13 @@ select option {
   gap: 2.4rem;
 }
 
-li {
+.expense_item {
   display: flex;
   justify-content: space-between;
   align-items: center;
   border: 1px solid var(--input);
   border-radius: 0.5rem;
+  padding: 1.2rem;
 }
 
 .expenses_title {
@@ -137,8 +138,13 @@ li {
     width: 100%;
   }
 
+  .expense_item {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
   .delete_btn {
-    width: 30%;
+    width: 100%;
   }
 
   .add_btn {

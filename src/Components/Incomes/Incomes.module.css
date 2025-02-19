@@ -93,12 +93,13 @@ select option {
   gap: 2.4rem;
 }
 
-li {
+.income_item {
   display: flex;
   justify-content: space-between;
   align-items: center;
   border: 1px solid var(--input);
   border-radius: 0.5rem;
+  padding: 1.2rem;
 }
 
 .incomes_title {
@@ -134,16 +135,21 @@ li {
     width: 100%;
   }
 
-  .delete_btn {
-    width: 30%;
-  }
-
   .add_btn {
     width: 100%;
     margin-top: 12.8rem;
   }
 
   .expenses_box {
+    width: 100%;
+  }
+
+  .income_item {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .delete_btn {
     width: 100%;
   }
 }
